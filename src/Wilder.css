@@ -1,0 +1,20 @@
+/* 
+ * card-layout. css 
+ */
+ .card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    justify-content: space-between;
+  }
+  
+  .button {
+    /* Reset text link default */
+    text-decoration: none;
+  
+    background-color: #F76C6C;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
