@@ -2,7 +2,7 @@ import blank_profile from './avatar.png';
 import './Wilder.css';
 import { Skill } from './Skill';
 import Proptypes from 'prop-types';
-import { Card } from './components/Card';
+import { Card } from './components/Card'
 
 export function Wilder(props) {
     return (

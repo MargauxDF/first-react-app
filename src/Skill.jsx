@@ -9,7 +9,7 @@ const Badge = styled.span`
     justify-content: center;
 
     /* Colors */
-    background-color: ${(props) => props.votes > 20 ? 'green' : 'red'};
+    background-color: ${(props) => props.votes > 5 ? 'green' : 'red'};
     color: #FFF;
 
     /* Rounded border */
