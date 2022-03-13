@@ -3,11 +3,13 @@ import { Container } from './components/Container';
 import { Wilder } from './Wilder';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Form } from './Form';
 
 function App() {
   //Hooks 
   const [wilders, setWilders] = useState([]);
   const [hasError, setHasError] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   //variables who defines functions
   const getWilders = async () => {
@@ -35,10 +37,12 @@ function App() {
       <header>
         <Container>
           <h1>Wilders Book</h1>
-          <button onClick={() => getWilders()}>Update</button>
         </Container>
       </header>
       <Container>
+        <h2>Add a new wilder :</h2>
+        <button onClick={() => setShowForm(!showForm)}>Show/Hide Form</button>
+        { showForm === true && <Form onWilderCreated={() => getWilders()} onError={() => setHasError(true)}></Form>}
         <h2>Wilders</h2>
         <section className="card-row">
           {
@@ -46,7 +50,8 @@ function App() {
             <Wilder 
               key={wilder.id}
               name={wilder.name} 
-              city={wilder.city} 
+              city={wilder.city}
+              presentation={wilder.presentation} 
               skills={wilder.skills} />)
           }
         </section>
